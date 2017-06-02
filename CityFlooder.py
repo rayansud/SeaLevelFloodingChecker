@@ -2,12 +2,13 @@
 import urllib2
 import json
 
+elevation_key = ''
+geocode_key = ''
 
 def get_elevation_for_latlng():
 
 
-    elevation_key = 'AIzaSyDlBuyhQP3dZkoRYPekfL7lB_X5jNljEmU'
-
+    
     lat = raw_input("Enter your latitude: ")
     long = raw_input("Enter your longitude: ")
     elevation_request = 'https://maps.googleapis.com/maps/api/elevation/json?locations='+str(lat)+','+str(long)+'&key='+elevation_key
@@ -23,8 +24,6 @@ def get_elevation_for_latlng():
 def get_elevation_for_city():
 
     nearest_city = raw_input("Nearest City: ")
-    geocode_key = 'AIzaSyAf0Sb8bMbFmYYsWw7Kf-lIVPY0pKHyiy4'
-    elevation_key = 'AIzaSyDlBuyhQP3dZkoRYPekfL7lB_X5jNljEmU'
 
     geocode_request = 'https://maps.googleapis.com/maps/api/geocode/json?address='+nearest_city+'&key='+geocode_key
 
